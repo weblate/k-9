@@ -4,6 +4,7 @@ import app.k9mail.core.common.oauth.OAuthConfigurationFactory
 import app.k9mail.core.featureflag.FeatureFlagFactory
 import app.k9mail.core.featureflag.FeatureFlagProvider
 import app.k9mail.core.featureflag.InMemoryFeatureFlagProvider
+import app.k9mail.dev.AppOAuthProviderSettings
 import app.k9mail.ui.widget.list.messageListWidgetModule
 import com.fsck.k9.account.newAccountModule
 import com.fsck.k9.auth.AppOAuthConfigurationFactory
@@ -43,6 +44,9 @@ private val mainAppModule = module {
             featureFlagFactory = get(),
         )
     }
+    single<OAuthConfigurationFactory> { AppOAuthConfigurationFactory(
+        settings = AppOAuthProviderSettings()
+    ) }
 }
 
 val appModules = listOf(
