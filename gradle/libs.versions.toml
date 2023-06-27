@@ -103,7 +103,7 @@ accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-
 fastadapter = { module = "com.mikepenz:fastadapter", version.ref = "fastAdapter" }
 fastadapter-extensions-drag = { module = "com.mikepenz:fastadapter-extensions-drag", version.ref = "fastAdapter" }
 fastadapter-extensions-utils = { module = "com.mikepenz:fastadapter-extensions-utils", version.ref = "fastAdapter" }
-materialdrawer = "com.mikepenz:materialdrawer:8.4.5"
+materialdrawer = "com.mikepenz:materialdrawer:9.0.1"
 preferencex = { module = "com.takisoft.preferencex:preferencex", version.ref = "preferencesFix" }
 preferencex-datetimepicker = { module = "com.takisoft.preferencex:preferencex-datetimepicker", version.ref = "preferencesFix" }
 preferencex-colorpicker = { module = "com.takisoft.preferencex:preferencex-colorpicker", version.ref = "preferencesFix" }
