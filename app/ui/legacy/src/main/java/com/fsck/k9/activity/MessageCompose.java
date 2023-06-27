@@ -10,8 +10,6 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -117,6 +115,7 @@ import com.fsck.k9.ui.permissions.K9PermissionUiHelper;
 import com.fsck.k9.ui.permissions.Permission;
 import com.fsck.k9.ui.permissions.PermissionUiHelper;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.openintents.openpgp.OpenPgpApiManager;
 import org.openintents.openpgp.util.OpenPgpApi;
@@ -1138,10 +1137,10 @@ public class MessageCompose extends K9Activity implements OnClickListener,
 
     @Override
     public Dialog onCreateDialog(int id) {
-        final Builder builder;
+        final MaterialAlertDialogBuilder builder;
         switch (id) {
             case DIALOG_SAVE_OR_DISCARD_DRAFT_MESSAGE:
-                builder = new AlertDialog.Builder(this)
+                builder = new MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.save_or_discard_draft_message_dlg_title);
                 if (draftMessageId == null) {
                     builder
@@ -1174,7 +1173,7 @@ public class MessageCompose extends K9Activity implements OnClickListener,
                         })
                         .create();
             case DIALOG_CONFIRM_DISCARD_ON_BACK:
-                return new AlertDialog.Builder(this)
+                return new MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.confirm_discard_draft_message_title)
                         .setMessage(R.string.confirm_discard_draft_message)
                         .setPositiveButton(R.string.cancel_action, new DialogInterface.OnClickListener() {
@@ -1197,7 +1196,7 @@ public class MessageCompose extends K9Activity implements OnClickListener,
             case DIALOG_CHOOSE_IDENTITY:
                 int dialogThemeResourceId = getThemeManager().getDialogThemeResourceId();
                 Context context = new ContextThemeWrapper(this, dialogThemeResourceId);
-                builder = new AlertDialog.Builder(context);
+                builder = new MaterialAlertDialogBuilder(context);
                 builder.setTitle(R.string.send_as);
                 final IdentityAdapter adapter = new IdentityAdapter(context);
                 builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
@@ -1210,7 +1209,7 @@ public class MessageCompose extends K9Activity implements OnClickListener,
 
                 return builder.create();
             case DIALOG_CONFIRM_DISCARD: {
-                return new AlertDialog.Builder(this)
+                return new MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.dialog_confirm_delete_title)
                         .setMessage(R.string.dialog_confirm_delete_message)
                         .setPositiveButton(R.string.dialog_confirm_delete_confirm_button,

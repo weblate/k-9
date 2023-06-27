@@ -1,11 +1,11 @@
 package com.fsck.k9.ui.permissions
 
-import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import com.fsck.k9.ui.R
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
  * A dialog displaying a message to explain why the app requests a certain permission.
@@ -20,7 +20,7 @@ class PermissionRationaleDialogFragment : DialogFragment() {
 
         val permission = Permission.valueOf(permissionName)
 
-        return AlertDialog.Builder(requireContext())
+        return MaterialAlertDialogBuilder(requireContext())
             .setTitle(permission.rationaleTitle)
             .setMessage(permission.rationaleMessage)
             .setPositiveButton(R.string.okay_action) { _, _ ->

@@ -1,7 +1,6 @@
 package com.fsck.k9.activity.setup
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
@@ -26,6 +25,7 @@ import com.fsck.k9.mail.filter.Hex
 import com.fsck.k9.ui.R
 import com.fsck.k9.ui.base.K9Activity
 import com.fsck.k9.ui.observe
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.security.cert.CertificateEncodingException
@@ -271,7 +271,7 @@ class AccountSetupCheckSettings : K9Activity(), ConfirmationDialogFragmentListen
 
             // TODO: refactor with DialogFragment.
             // This is difficult because we need to pass through chain[0] for onClick()
-            AlertDialog.Builder(this@AccountSetupCheckSettings)
+            MaterialAlertDialogBuilder(this@AccountSetupCheckSettings)
                 .setTitle(getString(R.string.account_setup_failed_dlg_invalid_certificate_title))
                 .setMessage(getString(msgResId, errorMessage) + " " + chainInfo.toString())
                 .setCancelable(true)

@@ -6,9 +6,9 @@ import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.CheckBox
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.preference.PreferenceDialogFragmentCompat
 import com.fsck.k9.ui.R
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AutocryptPreferEncryptDialogFragment : PreferenceDialogFragmentCompat() {
     private val preferEncryptPreference: AutocryptPreferEncryptPreference
@@ -29,7 +29,7 @@ class AutocryptPreferEncryptDialogFragment : PreferenceDialogFragmentCompat() {
             preferEncryptCheckbox.performClick()
         }
 
-        return AlertDialog.Builder(requireContext())
+        return MaterialAlertDialogBuilder(requireContext())
             .setView(view)
             .setPositiveButton(R.string.okay_action, ::onClick)
             .setNegativeButton(R.string.cancel_action, ::onClick)
