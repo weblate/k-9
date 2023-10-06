@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="designsystem_biometric_molecule_password_authentication_title">Verify your identity</string>
+    <string name="designsystem_biometric_molecule_password_authentication_subtitle">Unlock to view your password</string>
+    <!-- Please use the same translation for "screen lock" as is used in the 'Security' section in Android's settings app -->
+    <string name="designsystem_biometric_molecule_password_authentication_screen_lock_required">To view your password here, enable screen lock on this device.</string>
+</resources>
