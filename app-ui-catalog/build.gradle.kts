@@ -14,6 +14,7 @@ android {
 
 dependencies {
     implementation(projects.core.ui.compose.designsystem)
+    implementation(projects.core.ui.compose.designsystemBiometric)
 
     implementation(libs.androidx.compose.material)
     implementation(libs.androidx.compose.material.icons.extended)

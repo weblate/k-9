@@ -1,6 +1,7 @@
 package app.k9mail.ui.catalog.ui.molecule.items
 
 import androidx.compose.foundation.lazy.grid.LazyGridScope
+import app.k9mail.core.ui.compose.designsystem.biometric.molecule.input.BiometricPasswordInput
 import app.k9mail.core.ui.compose.designsystem.molecule.input.CheckboxInput
 import app.k9mail.core.ui.compose.designsystem.molecule.input.EmailAddressInput
 import app.k9mail.core.ui.compose.designsystem.molecule.input.NumberInput
@@ -108,6 +109,31 @@ fun LazyGridScope.inputItems() {
         ItemOutlined {
             WithRememberedState(input = "wrong password") { state ->
                 PasswordInput(
+                    password = state.value,
+                    onPasswordChange = { state.value = it },
+                    errorMessage = "Invalid password",
+                )
+            }
+        }
+    }
+
+    sectionHeaderItem(text = "BiometricPasswordInput")
+    sectionSubtitleItem(text = "Default")
+    item {
+        ItemOutlined {
+            WithRememberedState(input = "secret") { state ->
+                BiometricPasswordInput(
+                    password = state.value,
+                    onPasswordChange = { state.value = it },
+                )
+            }
+        }
+    }
+    sectionSubtitleItem(text = "With error")
+    item {
+        ItemOutlined {
+            WithRememberedState(input = "wrong password") { state ->
+                BiometricPasswordInput(
                     password = state.value,
                     onPasswordChange = { state.value = it },
                     errorMessage = "Invalid password",
